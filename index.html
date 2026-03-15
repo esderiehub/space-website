@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>COSMOS — Explore The Universe</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-planet"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring2"></div>
+            <p class="loader-text">INITIALIZING COSMOS<span class="loader-dots"></span></p>
+            <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+        </div>
+    </div>
+
+    <!-- CANVAS BACKGROUND -->
+    <canvas id="spaceCanvas"></canvas>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a class="nav-logo" href="#home">
+            <div class="logo-orbit">
+                <div class="logo-planet"></div>
+            </div>
+            <span class="logo-text">COSMOS</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#planets" class="nav-link">Planets</a></li>
+            <li><a href="#facts" class="nav-link">Facts</a></li>
+            <li><a href="#galaxy" class="nav-link">Galaxy</a></li>
+            <li><a href="#missions" class="nav-link">Missions</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#contact" class="btn btn-nav">Launch Mission</a>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg-glow glow1"></div>
+        <div class="hero-bg-glow glow2"></div>
+        <div class="hero-bg-glow glow3"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Live Mission: Artemis III — Active</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line" data-delay="0">EXPLORE</span>
+                <span class="hero-line hero-line--gradient" data-delay="1">THE INFINITE</span>
+                <span class="hero-line" data-delay="2">UNIVERSE</span>
+            </h1>
+            <p class="hero-desc">
+                Journey beyond the limits of human imagination. Discover billions of stars,
+                ancient galaxies, and the deepest mysteries of space — all in one place.
+            </p>
+            <div class="hero-actions">
+                <a href="#planets" class="btn btn-primary">
+                    <span>Start Exploring</span>
+                    <div class="btn-icon"><i class="fas fa-rocket"></i></div>
+                </a>
+                <a href="#missions" class="btn btn-ghost">
+                    <div class="btn-play"><i class="fas fa-play"></i></div>
+                    <span>Watch Missions</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="8">0</span>
+                    <span class="stat-unit">+</span>
+                    <span class="stat-lbl">Planets</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="200">0</span>
+                    <span class="stat-unit">B</span>
+                    <span class="stat-lbl">Stars</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="2">0</span>
+                    <span class="stat-unit">T</span>
+                    <span class="stat-lbl">Galaxies</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="13">0</span>
+                    <span class="stat-unit">B</span>
+                    <span class="stat-lbl">Years Old</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="solar-system">
+                <div class="ss-sun">
+                    <div class="ss-sun-glow"></div>
+                    <div class="ss-sun-core"></div>
+                    <div class="ss-flare f1"></div>
+                    <div class="ss-flare f2"></div>
+                    <div class="ss-flare f3"></div>
+                </div>
+                <div class="ss-orbit orbit1">
+                    <div class="ss-planet p-mercury">
+                        <div class="planet-tooltip">Mercury</div>
+                    </div>
+                </div>
+                <div class="ss-orbit orbit2">
+                    <div class="ss-planet p-venus">
+                        <div class="planet-tooltip">Venus</div>
+                    </div>
+                </div>
+                <div class="ss-orbit orbit3">
+                    <div class="ss-planet p-earth">
+                        <div class="p-moon"></div>
+                        <div class="planet-tooltip">Earth</div>
+                    </div>
+                </div>
+                <div class="ss-orbit orbit4">
+                    <div class="ss-planet p-mars">
+                        <div class="planet-tooltip">Mars</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div>
+    </section>
+
+    <!-- PLANETS -->
+    <section class="section planets-section" id="planets">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">Solar System</span>
+                <h2 class="section-title">Our <span class="text-gradient">Planets</span></h2>
+                <p class="section-sub">Eight worlds, each with its own story. Click any planet to explore.</p>
+            </div>
+            <div class="planets-filter" data-reveal>
+                <button class="filter-btn active" data-filter="all">All Planets</button>
+                <button class="filter-btn" data-filter="inner">Inner Planets</button>
+                <button class="filter-btn" data-filter="outer">Outer Planets</button>
+                <button class="filter-btn" data-filter="giant">Gas Giants</button>
+            </div>
+            <div class="planets-grid">
+
+                <div class="planet-card" data-planet="mercury" data-category="inner" data-reveal>
+                    <div class="pc-glow"></div>
+                    <div class="pc-number">01</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet mercury-p">
+                            <div class="pc-planet-shine"></div>
+                        </div>
+                        <div class="pc-orbit-ring"></div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Inner Planet</div>
+                        <h3 class="pc-name">Mercury</h3>
+                        <p class="pc-desc">The smallest and fastest planet, closest to the Sun.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">4,879 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">88 days</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Temp</span>
+                                <span class="pc-stat-value">430°C</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+                <div class="planet-card" data-planet="venus" data-category="inner" data-reveal>
+                    <div class="pc-glow" style="--glow-color: #c9a227;"></div>
+                    <div class="pc-number">02</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet venus-p">
+                            <div class="pc-planet-shine"></div>
+                            <div class="pc-planet-clouds"></div>
+                        </div>
+                        <div class="pc-orbit-ring"></div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Inner Planet</div>
+                        <h3 class="pc-name">Venus</h3>
+                        <p class="pc-desc">The hottest planet, shrouded in toxic clouds of sulfuric acid.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">12,104 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">225 days</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Temp</span>
+                                <span class="pc-stat-value">465°C</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+                <div class="planet-card featured" data-planet="earth" data-category="inner" data-reveal>
+                    <div class="pc-featured-badge">Home</div>
+                    <div class="pc-glow" style="--glow-color: #4a9eff;"></div>
+                    <div class="pc-number">03</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet earth-p">
+                            <div class="pc-planet-shine"></div>
+                            <div class="pc-planet-clouds earth-clouds"></div>
+                        </div>
+                        <div class="pc-orbit-ring">
+                            <div class="pc-moon"></div>
+                        </div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Our Home</div>
+                        <h3 class="pc-name">Earth</h3>
+                        <p class="pc-desc">The only known world teeming with life. Our cosmic home.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">12,742 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">365 days</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Moons</span>
+                                <span class="pc-stat-value">1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+                <div class="planet-card" data-planet="mars" data-category="inner" data-reveal>
+                    <div class="pc-glow" style="--glow-color: #e07050;"></div>
+                    <div class="pc-number">04</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet mars-p">
+                            <div class="pc-planet-shine"></div>
+                        </div>
+                        <div class="pc-orbit-ring"></div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Inner Planet</div>
+                        <h3 class="pc-name">Mars</h3>
+                        <p class="pc-desc">The Red Planet — humanity's next frontier and future home.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">6,779 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">687 days</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Moons</span>
+                                <span class="pc-stat-value">2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+                <div class="planet-card" data-planet="jupiter" data-category="outer giant" data-reveal>
+                    <div class="pc-glow" style="--glow-color: #c8903a;"></div>
+                    <div class="pc-number">05</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet jupiter-p">
+                            <div class="pc-planet-shine"></div>
+                            <div class="pc-bands"></div>
+                        </div>
+                        <div class="pc-orbit-ring"></div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Gas Giant</div>
+                        <h3 class="pc-name">Jupiter</h3>
+                        <p class="pc-desc">The solar system's giant. Its storm has raged for 350+ years.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">139,820 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">12 years</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Moons</span>
+                                <span class="pc-stat-value">95</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+                <div class="planet-card" data-planet="saturn" data-category="outer giant" data-reveal>
+                    <div class="pc-glow" style="--glow-color: #c8b840;"></div>
+                    <div class="pc-number">06</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet saturn-p">
+                            <div class="pc-planet-shine"></div>
+                        </div>
+                        <div class="pc-orbit-ring saturn-rings">
+                            <div class="saturn-ring-1"></div>
+                            <div class="saturn-ring-2"></div>
+                            <div class="saturn-ring-3"></div>
+                        </div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Gas Giant</div>
+                        <h3 class="pc-name">Saturn</h3>
+                        <p class="pc-desc">The jewel of the solar system with its stunning ring system.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">116,460 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">29 years</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Moons</span>
+                                <span class="pc-stat-value">146</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+                <div class="planet-card" data-planet="uranus" data-category="outer giant" data-reveal>
+                    <div class="pc-glow" style="--glow-color: #40b8c8;"></div>
+                    <div class="pc-number">07</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet uranus-p">
+                            <div class="pc-planet-shine"></div>
+                        </div>
+                        <div class="pc-orbit-ring uranus-ring-tilt"></div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Ice Giant</div>
+                        <h3 class="pc-name">Uranus</h3>
+                        <p class="pc-desc">The sideways planet — it rotates on a 98° tilted axis.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">50,724 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">84 years</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Moons</span>
+                                <span class="pc-stat-value">27</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+                <div class="planet-card" data-planet="neptune" data-category="outer giant" data-reveal>
+                    <div class="pc-glow" style="--glow-color: #3060b8;"></div>
+                    <div class="pc-number">08</div>
+                    <div class="pc-planet-wrap">
+                        <div class="pc-planet neptune-p">
+                            <div class="pc-planet-shine"></div>
+                        </div>
+                        <div class="pc-orbit-ring"></div>
+                    </div>
+                    <div class="pc-content">
+                        <div class="pc-tag">Ice Giant</div>
+                        <h3 class="pc-name">Neptune</h3>
+                        <p class="pc-desc">The windiest world with storms reaching 2,100 km/h.</p>
+                        <div class="pc-stats">
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Diameter</span>
+                                <span class="pc-stat-value">49,244 km</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Orbit</span>
+                                <span class="pc-stat-value">165 years</span>
+                            </div>
+                            <div class="pc-stat">
+                                <span class="pc-stat-label">Moons</span>
+                                <span class="pc-stat-value">16</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-hover-content">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Planet</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FACTS -->
+    <section class="section facts-section" id="facts">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">Did You Know?</span>
+                <h2 class="section-title">Mind-Blowing <span class="text-gradient">Space Facts</span></h2>
+                <p class="section-sub">The universe is stranger and more beautiful than you can imagine</p>
+            </div>
+            <div class="facts-bento">
+                <div class="fact-bento-card large" data-reveal>
+                    <div class="fbc-bg"></div>
+                    <div class="fbc-icon">☀️</div>
+                    <div class="fbc-content">
+                        <h3>The Sun's Gravity</h3>
+                        <p>The Sun contains 99.86% of all mass in the Solar System. Over one million Earths could fit inside it.</p>
+                        <div class="fbc-number">1,300,000<span>×</span></div>
+                        <span class="fbc-label">larger than Earth</span>
+                    </div>
+                </div>
+                <div class="fact-bento-card" data-reveal>
+                    <div class="fbc-bg"></div>
+                    <div class="fbc-icon">⚡</div>
+                    <div class="fbc-content">
+                        <h3>Speed of Light</h3>
+                        <p>Light travels 299,792 km every single second — yet it takes 4.2 years to reach the nearest star.</p>
+                    </div>
+                </div>
+                <div class="fact-bento-card" data-reveal>
+                    <div class="fbc-bg"></div>
+                    <div class="fbc-icon">🕳️</div>
+                    <div class="fbc-content">
+                        <h3>Black Holes</h3>
+                        <p>So dense that not even light can escape. Sagittarius A* at the center of our galaxy is 4 million solar masses.</p>
+                    </div>
+                </div>
+                <div class="fact-bento-card tall" data-reveal>
+                    <div class="fbc-bg"></div>
+                    <div class="fbc-icon">🌌</div>
+                    <div class="fbc-content">
+                        <h3>Scale of the Universe</h3>
+                        <p>The observable universe spans 93 billion light-years and contains an estimated 2 trillion galaxies.</p>
+                        <div class="fbc-number">2T<span>+</span></div>
+                        <span class="fbc-label">galaxies observed</span>
+                        <div class="fbc-bar-wrap">
+                            <div class="fbc-bar" style="--w: 20%"><span>Solar System</span></div>
+                            <div class="fbc-bar" style="--w: 45%"><span>Milky Way</span></div>
+                            <div class="fbc-bar" style="--w: 75%"><span>Local Group</span></div>
+                            <div class="fbc-bar" style="--w: 100%"><span>Observable Universe</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fact-bento-card" data-reveal>
+                    <div class="fbc-bg"></div>
+                    <div class="fbc-icon">🌑</div>
+                    <div class="fbc-content">
+                        <h3>Dark Matter</h3>
+                        <p>27% of the universe is dark matter — invisible, undetected, yet it shapes everything we see.</p>
+                    </div>
+                </div>
+                <div class="fact-bento-card" data-reveal>
+                    <div class="fbc-bg"></div>
+                    <div class="fbc-icon">🔭</div>
+                    <div class="fbc-content">
+                        <h3>James Webb</h3>
+                        <p>Webb can see light from 13.6 billion years ago — just 200 million years after the Big Bang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALAXY -->
+    <section class="section galaxy-section" id="galaxy">
+        <div class="container">
+            <div class="galaxy-wrapper">
+                <div class="galaxy-left" data-reveal>
+                    <span class="section-eyebrow">Milky Way Galaxy</span>
+                    <h2 class="section-title">Our Place in <span class="text-gradient">the Cosmos</span></h2>
+                    <p class="galaxy-desc">The Milky Way is a barred spiral galaxy approximately 100,000 light-years in diameter. Our Solar System sits quietly in the Orion Arm, 26,000 light-years from the galactic core — a supermassive black hole known as Sagittarius A*.</p>
+                    <div class="galaxy-metrics">
+                        <div class="gm-item">
+                            <div class="gm-bar-wrap">
+                                <span class="gm-label">Stars</span>
+                                <span class="gm-value">400 Billion</span>
+                            </div>
+                            <div class="gm-bar"><div class="gm-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="gm-item">
+                            <div class="gm-bar-wrap">
+                                <span class="gm-label">Age</span>
+                                <span class="gm-value">13.6 Billion Years</span>
+                            </div>
+                            <div class="gm-bar"><div class="gm-fill" data-width="95"></div></div>
+                        </div>
+                        <div class="gm-item">
+                            <div class="gm-bar-wrap">
+                                <span class="gm-label">Diameter</span>
+                                <span class="gm-value">100,000 Light-Years</span>
+                            </div>
+                            <div class="gm-bar"><div class="gm-fill" data-width="70"></div></div>
+                        </div>
+                        <div class="gm-item">
+                            <div class="gm-bar-wrap">
+                                <span class="gm-label">Dark Matter</span>
+                                <span class="gm-value">~85% of Mass</span>
+                            </div>
+                            <div class="gm-bar"><div class="gm-fill" data-width="85"></div></div>
+                        </div>
+                    </div>
+                    <a href="#missions" class="btn btn-primary">
+                        <span>Explore Missions</span>
+                        <div class="btn-icon"><i class="fas fa-satellite"></i></div>
+                    </a>
+                </div>
+                <div class="galaxy-right" data-reveal>
+                    <div class="galaxy-viz">
+                        <div class="gv-glow"></div>
+                        <div class="gv-disk">
+                            <div class="gv-core"></div>
+                            <div class="gv-arm ga1"></div>
+                            <div class="gv-arm ga2"></div>
+                            <div class="gv-arm ga3"></div>
+                            <div class="gv-arm ga4"></div>
+                            <div class="gv-stars-layer sl1"></div>
+                            <div class="gv-stars-layer sl2"></div>
+                        </div>
+                        <div class="gv-sun">
+                            <div class="gv-sun-dot"></div>
+                            <div class="gv-sun-pulse"></div>
+                            <div class="gv-sun-label">You Are Here</div>
+                        </div>
+                        <div class="gv-info-cards">
+                            <div class="gv-card" style="--x: 10%; --y: 15%">
+                                <span>Sagittarius A*</span>
+                            </div>
+                            <div class="gv-card" style="--x: 65%; --y: 72%">
+                                <span>Orion Arm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSIONS TIMELINE -->
+    <section class="section missions-section" id="missions">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">Space Race & Beyond</span>
+                <h2 class="section-title">Historic <span class="text-gradient">Missions</span></h2>
+                <p class="section-sub">The milestones that shaped humanity's journey into the cosmos</p>
+            </div>
+            <div class="timeline-container">
+                <div class="tl-line"></div>
+
+                <div class="tl-item" data-side="left" data-reveal>
+                    <div class="tl-card">
+                        <div class="tl-year-badge">1957</div>
+                        <div class="tl-icon"><i class="fas fa-satellite"></i></div>
+                        <h3>Sputnik 1</h3>
+                        <p>The Soviet Union launched the first artificial satellite into Earth's orbit, igniting the Space Age.</p>
+                        <div class="tl-tag">USSR</div>
+                    </div>
+                    <div class="tl-dot"></div>
+                </div>
+
+                <div class="tl-item" data-side="right" data-reveal>
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year-badge">1961</div>
+                        <div class="tl-icon"><i class="fas fa-user-astronaut"></i></div>
+                        <h3>Yuri Gagarin</h3>
+                        <p>The first human in space completed one orbit around Earth aboard Vostok 1 in 108 minutes.</p>
+                        <div class="tl-tag">USSR</div>
+                    </div>
+                </div>
+
+                <div class="tl-item" data-side="left" data-reveal>
+                    <div class="tl-card">
+                        <div class="tl-year-badge">1969</div>
+                        <div class="tl-icon">🌕</div>
+                        <h3>Apollo 11</h3>
+                        <p>Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon. "One giant leap."</p>
+                        <div class="tl-tag tl-tag--gold">NASA</div>
+                    </div>
+                    <div class="tl-dot"></div>
+                </div>
+
+                <div class="tl-item" data-side="right" data-reveal>
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year-badge">1990</div>
+                        <div class="tl-icon"><i class="fas fa-telescope"></i></div>
+                        <h3>Hubble Telescope</h3>
+                        <p>Launched into orbit, Hubble has revolutionized our understanding of the universe with breathtaking imagery.</p>
+                        <div class="tl-tag tl-tag--gold">NASA</div>
+                    </div>
+                </div>
+
+                <div class="tl-item" data-side="left" data-reveal>
+                    <div class="tl-card">
+                        <div class="tl-year-badge">2004</div>
+                        <div class="tl-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Mars Rovers</h3>
+                        <p>Spirit and Opportunity landed on Mars. Opportunity continued operating for an extraordinary 15 years.</p>
+                        <div class="tl-tag tl-tag--gold">NASA</div>
+                    </div>
+                    <div class="tl-dot"></div>
+                </div>
+
+                <div class="tl-item" data-side="right" data-reveal>
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year-badge">2021</div>
+                        <div class="tl-icon"><i class="fas fa-star"></i></div>
+                        <h3>James Webb Telescope</h3>
+                        <p>The most powerful space observatory ever built. It observes galaxies from just after the Big Bang.</p>
+                        <div class="tl-tag tl-tag--purple">NASA/ESA</div>
+                    </div>
+                </div>
+
+                <div class="tl-item" data-side="left" data-reveal>
+                    <div class="tl-card tl-card--active">
+                        <div class="tl-live-badge"><span class="tl-live-dot"></span> Active</div>
+                        <div class="tl-year-badge">2024+</div>
+                        <div class="tl-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Artemis Program</h3>
+                        <p>NASA's crewed lunar program. Aims to establish a permanent presence on the Moon and pave the way to Mars.</p>
+                        <div class="tl-tag tl-tag--gold">NASA</div>
+                    </div>
+                    <div class="tl-dot tl-dot--active"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-left" data-reveal>
+                    <span class="section-eyebrow">Get In Touch</span>
+                    <h2 class="section-title">Contact <span class="text-gradient">Mission Control</span></h2>
+                    <p class="contact-desc">Have a question about the cosmos, want to collaborate, or just want to talk space? We're always listening.</p>
+                    <div class="contact-channels">
+                        <div class="cc-item">
+                            <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cc-text">
+                                <span class="cc-label">Email</span>
+                                <span class="cc-value">info@cosmosxplore.com</span>
+                            </div>
+                        </div>
+                        <div class="cc-item">
+                            <div class="cc-icon"><i class="fas fa-satellite-dish"></i></div>
+                            <div class="cc-text">
+                                <span class="cc-label">Mission Control</span>
+                                <span class="cc-value">24/7 Active Monitoring</span>
+                            </div>
+                        </div>
+                        <div class="cc-item">
+                            <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="cc-text">
+                                <span class="cc-label">Location</span>
+                                <span class="cc-value">Earth, Milky Way, Local Group</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="#" class="cs-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="cs-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="cs-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="cs-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="cs-link"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right" data-reveal>
+                    <form class="contact-form" id="contactForm">
+                        <div class="cf-header">
+                            <div class="cf-dot d1"></div>
+                            <div class="cf-dot d2"></div>
+                            <div class="cf-dot d3"></div>
+                            <span>New Message</span>
+                        </div>
+                        <div class="cf-row">
+                            <div class="cf-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="Neil Armstrong" required/>
+                            </div>
+                            <div class="cf-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="neil@nasa.gov" required/>
+                            </div>
+                        </div>
+                        <div class="cf-group">
+                            <label>Subject</label>
+                            <input type="text" placeholder="Mission to Mars..."/>
+                        </div>
+                        <div class="cf-group">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="Houston, we have an idea..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Transmission</span>
+                            <div class="btn-icon"><i class="fas fa-paper-plane"></i></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-orbit"><div class="logo-planet"></div></div>
+                            <span class="logo-text">COSMOS</span>
+                        </div>
+                        <p>Exploring the universe together. Your journey into the infinite starts right here.</p>
+                        <div class="footer-socials">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#planets">Planets</a></li>
+                            <li><a href="#facts">Space Facts</a></li>
+                            <li><a href="#galaxy">Galaxy</a></li>
+                            <li><a href="#missions">Missions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="https://nasa.gov" target="_blank">NASA</a></li>
+                            <li><a href="https://esa.int" target="_blank">ESA</a></li>
+                            <li><a href="https://spacex.com" target="_blank">SpaceX</a></li>
+                            <li><a href="https://jwst.nasa.gov" target="_blank">James Webb</a></li>
+                            <li><a href="https://hubblesite.org" target="_blank">Hubble</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Newsletter</h4>
+                        <p class="footer-nl-text">Get the latest space news directly to your inbox.</p>
+                        <div class="footer-nl">
+                            <input type="email" placeholder="your@email.com"/>
+                            <button><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2024 COSMOS — All Rights Reserved</p>
+                <p>Built with a universe-sized imagination 🌌</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PLANET MODAL -->
+    <div class="planet-modal" id="planetModal">
+        <div class="pm-overlay" id="pmOverlay"></div>
+        <div class="pm-panel" id="pmPanel">
+            <button class="pm-close" id="pmClose"><i class="fas fa-times"></i></button>
+            <div class="pm-body" id="pmBody"></div>
+        </div>
+    </div>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+        <svg class="st-ring" viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="22" fill="none" stroke="url(#stGrad)" stroke-width="2"
+                    stroke-dasharray="138" stroke-dashoffset="138" id="stCircle"/>
+            <defs>
+                <linearGradient id="stGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6c63ff"/>
+                    <stop offset="100%" stop-color="#00d4ff"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
