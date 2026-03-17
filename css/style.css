@@ -1,13 +1,8 @@
-```css
-/* ============================================
-   COSMOS — ULTRA PREMIUM CSS (FULL & COMPLETE)
-   ============================================ */
-
-*, *::before, *::after {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-}
-
+*, *::before, *::after {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
 :root {
     --primary:      #6c63ff;
     --primary-dark: #4a42cc;
@@ -631,3 +626,4 @@ body {
 @keyframes fadeInUp {
     from { opacity:0; transform:translateY(30px);
     }
+}
