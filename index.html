@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>COSMOS — Explore The Universe</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
@@ -57,7 +57,7 @@
         <div class="hero-bg-glow glow1"></div>
         <div class="hero-bg-glow glow2"></div>
         <div class="hero-bg-glow glow3"></div>
-        <div class="hero-content">
+        <div class="hero-content" data-reveal>  
             <div class="hero-badge">
                 <span class="badge-dot"></span>
                 <span>Live Mission: Artemis III — Active</span>
@@ -165,9 +165,7 @@
                     <div class="pc-glow"></div>
                     <div class="pc-number">01</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet mercury-p">
-                            <div class="pc-planet-shine"></div>
-                        </div>
+                        <div class="pc-planet mercury-p"><div class="pc-planet-shine"></div></div>
                         <div class="pc-orbit-ring"></div>
                     </div>
                     <div class="pc-content">
@@ -175,34 +173,19 @@
                         <h3 class="pc-name">Mercury</h3>
                         <p class="pc-desc">The smallest and fastest planet, closest to the Sun.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">4,879 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">88 days</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Temp</span>
-                                <span class="pc-stat-value">430°C</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">4,879 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">88 days</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Temp</span><span class="pc-stat-value">430°C</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
                 <div class="planet-card" data-planet="venus" data-category="inner" data-reveal>
                     <div class="pc-glow" style="--glow-color: #c9a227;"></div>
                     <div class="pc-number">02</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet venus-p">
-                            <div class="pc-planet-shine"></div>
-                            <div class="pc-planet-clouds"></div>
-                        </div>
+                        <div class="pc-planet venus-p"><div class="pc-planet-shine"></div><div class="pc-planet-clouds"></div></div>
                         <div class="pc-orbit-ring"></div>
                     </div>
                     <div class="pc-content">
@@ -210,24 +193,12 @@
                         <h3 class="pc-name">Venus</h3>
                         <p class="pc-desc">The hottest planet, shrouded in toxic clouds of sulfuric acid.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">12,104 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">225 days</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Temp</span>
-                                <span class="pc-stat-value">465°C</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">12,104 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">225 days</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Temp</span><span class="pc-stat-value">465°C</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
                 <div class="planet-card featured" data-planet="earth" data-category="inner" data-reveal>
@@ -235,46 +206,27 @@
                     <div class="pc-glow" style="--glow-color: #4a9eff;"></div>
                     <div class="pc-number">03</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet earth-p">
-                            <div class="pc-planet-shine"></div>
-                            <div class="pc-planet-clouds earth-clouds"></div>
-                        </div>
-                        <div class="pc-orbit-ring">
-                            <div class="pc-moon"></div>
-                        </div>
+                        <div class="pc-planet earth-p"><div class="pc-planet-shine"></div><div class="pc-planet-clouds earth-clouds"></div></div>
+                        <div class="pc-orbit-ring"><div class="pc-moon"></div></div>
                     </div>
                     <div class="pc-content">
                         <div class="pc-tag">Our Home</div>
                         <h3 class="pc-name">Earth</h3>
                         <p class="pc-desc">The only known world teeming with life. Our cosmic home.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">12,742 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">365 days</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Moons</span>
-                                <span class="pc-stat-value">1</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">12,742 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">365 days</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Moons</span><span class="pc-stat-value">1</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
                 <div class="planet-card" data-planet="mars" data-category="inner" data-reveal>
                     <div class="pc-glow" style="--glow-color: #e07050;"></div>
                     <div class="pc-number">04</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet mars-p">
-                            <div class="pc-planet-shine"></div>
-                        </div>
+                        <div class="pc-planet mars-p"><div class="pc-planet-shine"></div></div>
                         <div class="pc-orbit-ring"></div>
                     </div>
                     <div class="pc-content">
@@ -282,34 +234,19 @@
                         <h3 class="pc-name">Mars</h3>
                         <p class="pc-desc">The Red Planet — humanity's next frontier and future home.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">6,779 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">687 days</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Moons</span>
-                                <span class="pc-stat-value">2</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">6,779 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">687 days</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Moons</span><span class="pc-stat-value">2</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
                 <div class="planet-card" data-planet="jupiter" data-category="outer giant" data-reveal>
                     <div class="pc-glow" style="--glow-color: #c8903a;"></div>
                     <div class="pc-number">05</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet jupiter-p">
-                            <div class="pc-planet-shine"></div>
-                            <div class="pc-bands"></div>
-                        </div>
+                        <div class="pc-planet jupiter-p"><div class="pc-planet-shine"></div><div class="pc-bands"></div></div>
                         <div class="pc-orbit-ring"></div>
                     </div>
                     <div class="pc-content">
@@ -317,33 +254,19 @@
                         <h3 class="pc-name">Jupiter</h3>
                         <p class="pc-desc">The solar system's giant. Its storm has raged for 350+ years.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">139,820 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">12 years</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Moons</span>
-                                <span class="pc-stat-value">95</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">139,820 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">12 years</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Moons</span><span class="pc-stat-value">95</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
                 <div class="planet-card" data-planet="saturn" data-category="outer giant" data-reveal>
                     <div class="pc-glow" style="--glow-color: #c8b840;"></div>
                     <div class="pc-number">06</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet saturn-p">
-                            <div class="pc-planet-shine"></div>
-                        </div>
+                        <div class="pc-planet saturn-p"><div class="pc-planet-shine"></div></div>
                         <div class="pc-orbit-ring saturn-rings">
                             <div class="saturn-ring-1"></div>
                             <div class="saturn-ring-2"></div>
@@ -355,33 +278,19 @@
                         <h3 class="pc-name">Saturn</h3>
                         <p class="pc-desc">The jewel of the solar system with its stunning ring system.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">116,460 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">29 years</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Moons</span>
-                                <span class="pc-stat-value">146</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">116,460 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">29 years</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Moons</span><span class="pc-stat-value">146</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
                 <div class="planet-card" data-planet="uranus" data-category="outer giant" data-reveal>
                     <div class="pc-glow" style="--glow-color: #40b8c8;"></div>
                     <div class="pc-number">07</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet uranus-p">
-                            <div class="pc-planet-shine"></div>
-                        </div>
+                        <div class="pc-planet uranus-p"><div class="pc-planet-shine"></div></div>
                         <div class="pc-orbit-ring uranus-ring-tilt"></div>
                     </div>
                     <div class="pc-content">
@@ -389,33 +298,19 @@
                         <h3 class="pc-name">Uranus</h3>
                         <p class="pc-desc">The sideways planet — it rotates on a 98° tilted axis.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">50,724 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">84 years</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Moons</span>
-                                <span class="pc-stat-value">27</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">50,724 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">84 years</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Moons</span><span class="pc-stat-value">27</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
                 <div class="planet-card" data-planet="neptune" data-category="outer giant" data-reveal>
                     <div class="pc-glow" style="--glow-color: #3060b8;"></div>
                     <div class="pc-number">08</div>
                     <div class="pc-planet-wrap">
-                        <div class="pc-planet neptune-p">
-                            <div class="pc-planet-shine"></div>
-                        </div>
+                        <div class="pc-planet neptune-p"><div class="pc-planet-shine"></div></div>
                         <div class="pc-orbit-ring"></div>
                     </div>
                     <div class="pc-content">
@@ -423,24 +318,12 @@
                         <h3 class="pc-name">Neptune</h3>
                         <p class="pc-desc">The windiest world with storms reaching 2,100 km/h.</p>
                         <div class="pc-stats">
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Diameter</span>
-                                <span class="pc-stat-value">49,244 km</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Orbit</span>
-                                <span class="pc-stat-value">165 years</span>
-                            </div>
-                            <div class="pc-stat">
-                                <span class="pc-stat-label">Moons</span>
-                                <span class="pc-stat-value">16</span>
-                            </div>
+                            <div class="pc-stat"><span class="pc-stat-label">Diameter</span><span class="pc-stat-value">49,244 km</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Orbit</span><span class="pc-stat-value">165 years</span></div>
+                            <div class="pc-stat"><span class="pc-stat-label">Moons</span><span class="pc-stat-value">16</span></div>
                         </div>
                     </div>
-                    <div class="pc-hover-content">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Explore Planet</span>
-                    </div>
+                    <div class="pc-hover-content"><i class="fas fa-arrow-right"></i><span>Explore Planet</span></div>
                 </div>
 
             </div>
@@ -579,12 +462,8 @@
                             <div class="gv-sun-label">You Are Here</div>
                         </div>
                         <div class="gv-info-cards">
-                            <div class="gv-card" style="--x: 10%; --y: 15%">
-                                <span>Sagittarius A*</span>
-                            </div>
-                            <div class="gv-card" style="--x: 65%; --y: 72%">
-                                <span>Orion Arm</span>
-                            </div>
+                            <div class="gv-card" style="--x: 10%; --y: 15%"><span>Sagittarius A*</span></div>
+                            <div class="gv-card" style="--x: 65%; --y: 72%"><span>Orion Arm</span></div>
                         </div>
                     </div>
                 </div>
@@ -680,7 +559,6 @@
                     </div>
                     <div class="tl-dot tl-dot--active"></div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -698,7 +576,7 @@
                             <div class="cc-icon"><i class="fas fa-envelope"></i></div>
                             <div class="cc-text">
                                 <span class="cc-label">Email</span>
-                                <span class="cc-value">ddemireser@gmail.com</span>
+                                <a href="mailto:ddemireser@gmail.com" class="cc-value cc-link">ddemireser@gmail.com</a>
                             </div>
                         </div>
                         <div class="cc-item">
@@ -712,36 +590,34 @@
                             <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="cc-text">
                                 <span class="cc-label">Location</span>
-                                <span class="cc-value">Anywhere in universe</span>
+                                <span class="cc-value">Anywhere in the Universe</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="contact-right" data-reveal>
-                    <form class="contact-form" id="contactForm">
-                        <div class="cf-header">
-                            <div class="cf-dot d1"></div>
-                            <div class="cf-dot d2"></div>
-                            <div class="cf-dot d3"></div>
-                            <span>New Message</span>
-                        </div>
+                    <form class="contact-form" id="contactForm"
+                          action="https://formsubmit.co/ddemireser@gmail.com"
+                          method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="javascript:void(0)">
                         <div class="cf-row">
                             <div class="cf-group">
                                 <label>Name</label>
-                                <input type="text" placeholder="Neil Armstrong" required/>
+                                <input type="text" name="name" placeholder="Neil Armstrong" required/>
                             </div>
                             <div class="cf-group">
                                 <label>Email</label>
-                                <input type="email" placeholder="neil@nasa.gov" required/>
+                                <input type="email" name="email" placeholder="neil@nasa.gov" required/>
                             </div>
                         </div>
                         <div class="cf-group">
                             <label>Subject</label>
-                            <input type="text" placeholder="Mission to Mars..."/>
+                            <input type="text" name="subject" placeholder="Mission to Mars..."/>
                         </div>
                         <div class="cf-group">
                             <label>Message</label>
-                            <textarea rows="5" placeholder="Houston, we have an idea..." required></textarea>
+                            <textarea rows="5" name="message" placeholder="Houston, we have an idea..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
                             <span>Send Transmission</span>
@@ -755,37 +631,16 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-top">
+        <div class="footer-bottom">
             <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <div class="logo-orbit"><div class="logo-planet"></div></div>
-                            <span class="logo-text">COSMOS</span>
-                        </div>
-                        <p>Exploring the universe together. Your journey into the infinite starts right here.</p>
+                <div class="footer-bottom-inner">
+                    <div class="footer-logo">
+                        <div class="logo-orbit"><div class="logo-planet"></div></div>
+                        <span class="logo-text">COSMOS</span>
                     </div>
-                    <div class="footer-col">
-                        <h4>Explore</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#planets">Planets</a></li>
-                            <li><a href="#facts">Space Facts</a></li>
-                            <li><a href="#galaxy">Galaxy</a></li>
-                            <li><a href="#missions">Missions</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="https://nasa.gov" target="_blank">NASA</a></li>
-                            <li><a href="https://esa.int" target="_blank">ESA</a></li>
-                            <li><a href="https://spacex.com" target="_blank">SpaceX</a></li>
-                            <li><a href="https://jwst.nasa.gov" target="_blank">James Webb</a></li>
-                            <li><a href="https://hubblesite.org" target="_blank">Hubble</a></li>
-                        </ul>
-                    </div>
-                    </div>
+                    <p class="footer-copy">© 2024 COSMOS — All Rights Reserved</p>
+                </div>
+            </div>
         </div>
     </footer>
 
