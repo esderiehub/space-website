@@ -1482,8 +1482,8 @@ body {
 
 /* Fix footer duplicate */  
 .footer-bottom + .footer-bottom {  
-}
-
+    display: none;  
+}  
 @media (max-width: 768px) {  
     .references-grid {  
         grid-template-columns: 1fr;  
