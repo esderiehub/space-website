@@ -261,7 +261,8 @@ function animateCounters() {
             else el.textContent = target;
         };
         requestAnimationFrame(update);  
-        };  
+        });
+    }
 
 /* ===== GALAXY BARS ===== */
 function animateGalaxyBars() {
