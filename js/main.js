@@ -260,9 +260,8 @@ function animateCounters() {
             if (progress < 1) requestAnimationFrame(update);
             else el.textContent = target;
         };
-        requestAnimationFrame(update);
-    });
-}
+        requestAnimationFrame(update);  
+        };  
 
 /* ===== GALAXY BARS ===== */
 function animateGalaxyBars() {
